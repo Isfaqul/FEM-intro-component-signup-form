@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --main-bg: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue-accent: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --gray-blue: hsl(246, 25%, 77%);
+  --white: white;
+
+  --f: "Poppins", sans-serif;
+  --bg-img-d: url("images/bg-intro-desktop.png");
+  --bg-img-m: url("images/bg-intro-mobile.png");
+  --error-icon: url("images/icon-error.svg");
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--f);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-img-m);
+  background-position: center;
+  background-size: contain;
+  background-color: var(--main-bg);
+  padding: 0 1.5em;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+main {
+  margin: 0 auto;
+  width: min(100%, 31.25em);
+}
+
+.hero-txt {
+  font-size: 1.75rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.hero-sub {
+  margin: 1.8125em auto 3.9375em auto;
+  color: var(--white);
+}
+
+.purple-box {
+  background-color: var(--blue-accent);
+  color: var(--white);
+  font-size: 0.9375rem;
+  padding: 1.3125em;
+  border-radius: 0.625em;
+  margin-bottom: 1.4375em;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.purple-box span {
+  display: block;
+  font-weight: 400;
+}
+
+.form-ctnr {
+  background-color: var(--white);
+  border-radius: 0.625em;
+  padding: 1.5625em 1.5em;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* .box - input boxes and buttons */
+
+.box {
+  display: block;
+  width: 100%;
+  padding: 1.066667em 0.933333em;
+  border-radius: 0.333333em;
+  border: none;
+}
+
+.input-box {
+  font-size: 0.9375rem;
+  font-family: var(--f);
+  font-weight: 600;
+  color: var(--dark-blue);
+  border: 1px solid var(--gray-blue);
+  margin-bottom: 1.066667em;
+  transition: all 100ms ease-in-out;
+  outline: none;
+}
+
+.input-box:focus,
+.input-box:hover {
+  border: 1px solid var(--dark-blue);
+}
+
+.input-box::placeholder {
+  font-size: 0.933333em;
+  font-weight: 600;
+}
+
+.btn {
+  font-size: 1rem;
+  letter-spacing: 0.09em;
+  cursor: pointer;
+  background-color: var(--green);
+  font-family: var(--f);
+  color: var(--white);
+  font-weight: 500;
+  text-transform: uppercase;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.15);
+  transition: all 50ms ease-out;
+}
+
+.btn:hover {
+  background-color: rgba(56, 204, 140, 0.85);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  background-color: var(--green);
+  box-shadow: none;
+}
+
+.tnc {
+  color: var(--gray-blue);
+  font-size: 0.6875rem;
+  margin-top: 1em;
+  font-weight: 500;
+}
+
+.tnc a {
+  color: var(--main-bg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* error styling */
+
+.input-box-error {
+  border: 1px solid var(--main-bg);
+  outline: 1px solid var(--main-bg);
+}
+
+.input-box-error:hover,
+.input-box-error:focus {
+  border: 1px solid var(--main-bg);
+}
+
+.input-ctnr-error {
+  position: relative;
+}
+
+.input-ctnr-error::after {
+  content: "";
+  background: var(--error-icon);
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+}
+
+.error-msg {
+  font-size: 0.6875rem;
+  color: var(--main-bg);
+  text-align: right;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  bottom: -30%;
+}
+
+/* Error styling ends */
+
+@media (min-width: 768px) {
+  body {
+    background: var(--bg-img-d);
+    background-color: var(--main-bg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75em;
+    width: min(100%, 69.375em);
+  }
+
+  .ctnr {
+    flex: 1;
+  }
+
+  .hero-txt,
+  .hero-sub {
+    text-align: left;
+  }
+
+  .hero-txt {
+    font-size: 3.125rem;
+    line-height: 110%;
+  }
+
+  .hero-sub {
+    margin: 1.6875em auto 0 auto;
+    line-height: 160%;
+  }
+
+  .purple-box span {
+    display: inline-block;
+    font-weight: 400;
+  }
+
+  .form-ctnr {
+    padding: 2.5em;
+  }
+
+  .box {
+    padding: 1.066667em 2.066667em;
+  }
+
+  .input-box {
+    margin-bottom: 1.333333em;
+  }
+}
